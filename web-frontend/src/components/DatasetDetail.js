@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 import { Bar, Pie } from 'react-chartjs-2';
 import api from '../services/api';
@@ -11,13 +11,7 @@ const DatasetDetail = ({ dataset, onBack }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    if (dataset) {
-      fetchDatasetData();
-    }
-  }, [dataset]);
-
-  const fetchDatasetData = async () => {
+  const fetchDatasetData = useCallback(async () => {
     try {
       setLoading(true);
       const [equipmentResponse, summaryResponse] = await Promise.all([
@@ -34,7 +28,13 @@ const DatasetDetail = ({ dataset, onBack }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [dataset]);
+
+  useEffect(() => {
+    if (dataset) {
+      fetchDatasetData();
+    }
+  }, [dataset, fetchDatasetData]);
 
   const getTypeDistributionChart = () => {
     if (!summary?.type_distribution) return null;

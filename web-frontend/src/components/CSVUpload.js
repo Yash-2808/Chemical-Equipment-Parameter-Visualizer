@@ -41,7 +41,7 @@ const CSVUpload = ({ onSuccess }) => {
     setError(null);
 
     try {
-      const response = await api.post('/datasets/upload_csv/', formData, {
+      await api.post('/datasets/upload_csv/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
