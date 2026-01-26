@@ -1,0 +1,31 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Pump A,Pump,150.5,2.3,75.2
+Pump B,Pump,120.8,1.9,72.8
+Pump C,Pump,180.3,2.7,78.5
+Heat Exchanger A,Heat Exchanger,89.3,1.8,120.5
+Heat Exchanger B,Heat Exchanger,95.7,2.1,125.3
+Heat Exchanger C,Heat Exchanger,82.4,1.6,118.7
+Valve A,Valve,45.7,3.1,85.3
+Valve B,Valve,38.9,2.8,82.1
+Valve C,Valve,52.3,3.5,88.7
+Compressor A,Compressor,220.4,4.2,95.8
+Compressor B,Compressor,198.7,3.9,92.3
+Compressor C,Compressor,245.1,4.5,98.2
+Reactor A,Reactor,67.8,1.2,145.6
+Reactor B,Reactor,71.2,1.4,148.3
+Reactor C,Reactor,63.5,1.1,142.9
+Filter A,Filter,28.9,0.8,65.4
+Filter B,Filter,31.2,0.9,67.8
+Filter C,Filter,26.7,0.7,63.2
+Tank A,Tank,15.3,0.5,45.7
+Tank B,Tank,18.9,0.6,48.2
+Tank C,Tank,12.4,0.4,42.8
+Distillation Column A,Distillation Column,156.7,2.8,135.4
+Distillation Column B,Distillation Column,142.3,2.5,132.1
+Distillation Column C,Distillation Column,168.9,3.1,138.7
+Mixer A,Mixer,78.4,1.7,88.3
+Mixer B,Mixer,72.1,1.5,85.7
+Mixer C,Mixer,85.6,1.9,91.2
+Dryer A,Dryer,92.3,2.2,105.6
+Dryer B,Dryer,87.8,2.0,102.3
+Dryer C,Dryer,96.7,2.4,108.9
