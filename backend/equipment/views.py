@@ -1,8 +1,8 @@
 import pandas as pd
 from django.http import JsonResponse, HttpResponse
 from django.db import transaction
-from rest_framework import viewsets, status, permissions
-from rest_framework.decorators import action, authentication_classes, permission_classes
+from rest_framework import viewsets, status
+from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import EquipmentDataset, Equipment
@@ -11,11 +11,8 @@ from .serializers import (
     CSVUploadSerializer, EquipmentSerializer
 )
 from .utils import generate_dataset_report, generate_charts_pdf
-from .authentication import SimpleAPIKeyAuthentication
 
 
-@authentication_classes([SimpleAPIKeyAuthentication])
-@permission_classes([permissions.IsAuthenticated])
 class EquipmentDatasetViewSet(viewsets.ModelViewSet):
     queryset = EquipmentDataset.objects.all()
     serializer_class = EquipmentDatasetSerializer
@@ -204,8 +201,6 @@ class EquipmentDatasetViewSet(viewsets.ModelViewSet):
             )
 
 
-@authentication_classes([SimpleAPIKeyAuthentication])
-@permission_classes([permissions.IsAuthenticated])
 class EquipmentViewSet(viewsets.ReadOnlyModelViewSet):
     """Read-only viewset for individual equipment items"""
     queryset = Equipment.objects.all()
@@ -224,8 +219,6 @@ class EquipmentViewSet(viewsets.ReadOnlyModelViewSet):
         return queryset
 
 
-@authentication_classes([SimpleAPIKeyAuthentication])
-@permission_classes([permissions.IsAuthenticated])
 class AnalyticsView(APIView):
     """Global analytics across all datasets"""
     

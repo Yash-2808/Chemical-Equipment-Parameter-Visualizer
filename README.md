@@ -56,22 +56,18 @@ This application provides a comprehensive solution for chemical equipment data m
 ## 📁 Project Structure
 
 ```
-chemical-equipment-visualizer/
-├── backend/                    # Django backend
-│   ├── backend/               # Django project settings
-│   ├── equipment/             # Main Django app
-│   │   ├── models.py          # Database models
-│   │   ├── views.py           # API views with actions
-│   │   ├── serializers.py     # Data serializers
-│   │   ├── urls.py            # URL routing
-│   │   ├── admin.py           # Django admin interface
-│   │   ├── authentication.py  # API authentication
-│   │   └── utils.py           # PDF generation utilities
-│   ├── manage.py              # Django management script
-│   └── db.sqlite3            # SQLite database
-├── web-frontend/              # React web application
-│   ├── src/
-│   │   ├── components/        # React components
+chemical-equipment-parameter-visualizer/
+├── 📄 README.md                 # Main project documentation
+├── 📄 requirements.txt         # Python dependencies
+├── 📁 backend/                 # Django REST API backend
+├── 📁 web-frontend/            # React web application
+├── 📁 desktop-frontend/        # PyQt5 desktop application
+├── 📁 data/                   # Data files and datasets
+│   ├── 📁 csv/                # CSV dataset files
+│   └── 📁 exports/            # Generated exports
+├── 📁 docs/                   # Documentation
+├── 📁 scripts/                 # Utility scripts
+└── 📄 .gitignore               # Git ignore file
 │   │   │   ├── DatasetList.js
 │   │   │   ├── DatasetDetail.js
 │   │   │   ├── CSVUpload.js

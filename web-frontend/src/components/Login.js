@@ -36,11 +36,34 @@ const Login = ({ onLogin }) => {
     }
   };
 
-  const handleDemoLogin = () => {
+  const handleDemoLogin = async () => {
     const demoKey = 'demo-api-key-12345';
     setApiKey(demoKey);
-    localStorage.setItem('apiKey', demoKey);
-    onLogin(demoKey);
+    setLoading(true);
+    setError('');
+
+    try {
+      // Test the API key by making a request to datasets endpoint
+      const testApi = api.create({
+        baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': demoKey,
+        },
+      });
+
+      await testApi.get('/datasets/');
+      
+      // If successful, save the API key and notify parent
+      localStorage.setItem('apiKey', demoKey);
+      onLogin(demoKey);
+      
+    } catch (err) {
+      setError('Demo API key validation failed. Please try again.');
+      console.error('Demo login error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -79,8 +102,9 @@ const Login = ({ onLogin }) => {
               type="button"
               className="demo-button"
               onClick={handleDemoLogin}
+              disabled={loading}
             >
-              🎮 Use Demo Key
+              {loading ? '🔄 Validating...' : '🎮 Use Demo Key'}
             </button>
           </div>
         </form>

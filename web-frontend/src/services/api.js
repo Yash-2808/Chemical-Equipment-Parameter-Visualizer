@@ -7,7 +7,6 @@ const api = axios.create({
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
-    'X-API-Key': process.env.REACT_APP_API_KEY || 'demo-api-key-12345',
   },
 });
 
