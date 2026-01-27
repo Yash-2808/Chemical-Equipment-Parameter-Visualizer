@@ -809,3 +809,22 @@ body {
 .pdf-button.charts-button:hover:not(:disabled) {
   background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
 }
+
+/* Logout Button */
+.logout-button {
+  background: linear-gradient(135deg, #e53e3e, #c53030);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #fc8181, #f56565);
+  transform: translateY(-1px);
+}

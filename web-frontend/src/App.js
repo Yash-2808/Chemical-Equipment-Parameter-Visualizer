@@ -4,16 +4,43 @@ import DatasetList from './components/DatasetList';
 import DatasetDetail from './components/DatasetDetail';
 import CSVUpload from './components/CSVUpload';
 import Analytics from './components/Analytics';
+import Login from './components/Login';
 import api from './services/api';
 
 function App() {
   const [selectedDataset, setSelectedDataset] = useState(null);
   const [activeView, setActiveView] = useState('list');
   const [analytics, setAnalytics] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    fetchAnalytics();
+    // Check for existing API key in localStorage
+    const savedApiKey = localStorage.getItem('apiKey');
+    if (savedApiKey) {
+      setIsAuthenticated(true);
+      updateApiHeaders(savedApiKey);
+      fetchAnalytics();
+    }
   }, []);
+
+  const updateApiHeaders = (key) => {
+    api.defaults.headers.common['X-API-Key'] = key;
+  };
+
+  const handleLogin = (key) => {
+    setIsAuthenticated(true);
+    updateApiHeaders(key);
+    fetchAnalytics();
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('apiKey');
+    setIsAuthenticated(false);
+    delete api.defaults.headers.common['X-API-Key'];
+    setSelectedDataset(null);
+    setActiveView('list');
+    setAnalytics(null);
+  };
 
   const fetchAnalytics = async () => {
     try {
@@ -56,32 +83,44 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Chemical Equipment Parameter Visualizer</h1>
-        <nav className="nav-menu">
-          <button 
-            className={activeView === 'list' ? 'active' : ''}
-            onClick={() => setActiveView('list')}
-          >
-            Datasets
-          </button>
-          <button 
-            className={activeView === 'upload' ? 'active' : ''}
-            onClick={() => setActiveView('upload')}
-          >
-            Upload CSV
-          </button>
+      {!isAuthenticated ? (
+        <Login onLogin={handleLogin} />
+      ) : (
+        <>
+          <header className="App-header">
+            <h1>Chemical Equipment Parameter Visualizer</h1>
+            <nav className="nav-menu">
+              <button 
+                className={activeView === 'list' ? 'active' : ''}
+                onClick={() => setActiveView('list')}
+              >
+                Datasets
+              </button>
+              <button 
+                className={activeView === 'upload' ? 'active' : ''}
+                onClick={() => setActiveView('upload')}
+              >
+                Upload CSV
+              </button>
           <button 
             className={activeView === 'analytics' ? 'active' : ''}
             onClick={() => setActiveView('analytics')}
           >
             Analytics
           </button>
+          <button 
+            className="logout-button"
+            onClick={handleLogout}
+          >
+            🚪 Logout
+          </button>
         </nav>
       </header>
       <main className="App-main">
         {renderContent()}
       </main>
+        </>
+      )}
     </div>
   );
 }
