@@ -7,3 +7,6 @@ PyQt5==5.15.10
 reportlab==4.0.7
 Pillow==9.4.0
 python-decouple==3.8
+gunicorn==21.2.0
+dj-database-url==2.1.0
+whitenoise==6.6.0
