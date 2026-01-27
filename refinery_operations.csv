@@ -1,0 +1,31 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Crude Pump A,Pump,450.8,5.8,105.4
+Crude Pump B,Pump,425.3,5.4,101.8
+Crude Pump C,Pump,475.2,6.2,109.2
+Reboiler HX A,Heat Exchanger,185.7,3.8,185.6
+Reboiler HX B,Heat Exchanger,178.3,3.5,182.3
+Reboiler HX C,Heat Exchanger,192.4,4.1,188.7
+Gate Valve A,Valve,85.7,5.2,105.2
+Gate Valve B,Valve,78.9,4.8,101.6
+Gate Valve C,Valve,92.3,5.6,108.8
+Turbo Compressor A,Compressor,520.4,7.8,145.7
+Turbo Compressor B,Compressor,495.7,7.4,141.2
+Turbo Compressor C,Compressor,545.1,8.2,150.3
+Fluid Catalytic Reactor A,Reactor,125.6,3.2,195.8
+Fluid Catalytic Reactor B,Reactor,118.9,2.9,192.4
+Fluid Catalytic Reactor C,Reactor,132.1,3.5,199.2
+Catalytic Filter A,Filter,58.7,1.8,85.4
+Catalytic Filter B,Filter,55.2,1.6,82.7
+Catalytic Filter C,Filter,62.3,2.0,88.2
+Crude Tank A,Tank,35.8,1.2,65.7
+Crude Tank B,Tank,38.3,1.3,68.4
+Crude Tank C,Tank,33.5,1.1,62.8
+Atmospheric Column A,Distillation Column,245.7,4.8,185.7
+Atmospheric Column B,Distillation Column,238.9,4.5,182.3
+Atmospheric Column C,Distillation Column,252.1,5.1,189.1
+Agitator Mixer A,Mixer,125.7,2.8,112.4
+Agitator Mixer B,Mixer,118.9,2.5,109.1
+Agitator Mixer C,Mixer,132.5,3.1,115.7
+Spray Dryer A,Dryer,145.8,3.8,138.4
+Spray Dryer B,Dryer,138.3,3.5,135.2
+Spray Dryer C,Dryer,153.2,4.1,141.8

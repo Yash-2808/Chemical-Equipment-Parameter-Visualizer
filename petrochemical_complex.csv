@@ -1,0 +1,31 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Booster Pump A,Pump,280.7,3.8,88.4
+Booster Pump B,Pump,265.2,3.5,85.7
+Booster Pump C,Pump,295.4,4.1,91.2
+Plate Heat Exchanger A,Heat Exchanger,95.8,2.2,125.6
+Plate Heat Exchanger B,Heat Exchanger,88.3,2.0,122.3
+Plate Heat Exchanger C,Heat Exchanger,102.7,2.4,128.9
+Globe Valve A,Valve,55.4,3.5,88.2
+Globe Valve B,Valve,48.7,3.1,84.6
+Globe Valve C,Valve,62.1,3.9,91.8
+Axial Compressor A,Compressor,420.8,6.5,125.7
+Axial Compressor B,Compressor,395.3,6.1,121.2
+Axial Compressor C,Compressor,445.2,6.9,130.3
+PFR Reactor A,Reactor,75.4,1.8,155.8
+PFR Reactor B,Reactor,68.9,1.6,152.4
+PFR Reactor C,Reactor,82.1,2.0,159.2
+Sand Filter A,Filter,38.7,1.2,68.4
+Sand Filter B,Filter,35.2,1.1,65.7
+Sand Filter C,Filter,42.3,1.4,71.2
+Process Tank A,Tank,20.8,0.6,48.7
+Process Tank B,Tank,24.3,0.7,51.4
+Process Tank C,Tank,18.5,0.5,45.8
+Absorption Column A,Distillation Column,165.4,3.2,145.7
+Absorption Column B,Distillation Column,158.9,2.9,142.3
+Absorption Column C,Distillation Column,172.1,3.5,149.1
+Jet Mixer A,Mixer,85.7,1.9,92.4
+Jet Mixer B,Mixer,78.9,1.7,89.1
+Jet Mixer C,Mixer,92.5,2.1,95.7
+Fluidized Bed Dryer A,Dryer,105.8,2.8,118.4
+Fluidized Bed Dryer B,Dryer,98.3,2.5,115.2
+Fluidized Bed Dryer C,Dryer,113.2,3.1,121.8

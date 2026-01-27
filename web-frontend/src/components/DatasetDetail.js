@@ -30,6 +30,37 @@ const DatasetDetail = ({ dataset, onBack }) => {
     }
   }, [dataset]);
 
+  const downloadPDF = async (type) => {
+    try {
+      const endpoint = type === 'report' 
+        ? `/datasets/${dataset.id}/generate_pdf_report/`
+        : `/datasets/${dataset.id}/generate_charts_pdf/`;
+      
+      const response = await api.get(endpoint, {
+        responseType: 'blob'
+      });
+      
+      // Create download link
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      
+      const filename = type === 'report' 
+        ? `equipment_report_${dataset.name.replace(/\s+/g, '_')}.pdf`
+        : `equipment_charts_${dataset.name.replace(/\s+/g, '_')}.pdf`;
+      
+      link.setAttribute('download', filename);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+      
+    } catch (error) {
+      console.error('Error downloading PDF:', error);
+      alert('Failed to download PDF. Please try again.');
+    }
+  };
+
   useEffect(() => {
     if (dataset) {
       fetchDatasetData();
@@ -196,6 +227,24 @@ const DatasetDetail = ({ dataset, onBack }) => {
               ))}
             </tbody>
           </table>
+        </div>
+        
+        {/* PDF Download Buttons */}
+        <div className="pdf-buttons">
+          <button 
+            className="pdf-button"
+            onClick={() => downloadPDF('report')}
+            disabled={loading}
+          >
+            📄 Download Full Report
+          </button>
+          <button 
+            className="pdf-button charts-button"
+            onClick={() => downloadPDF('charts')}
+            disabled={loading}
+          >
+            📊 Download Charts Only
+          </button>
         </div>
       </div>
     </div>

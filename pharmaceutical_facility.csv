@@ -1,0 +1,31 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Sterile Pump A,Pump,180.5,2.8,78.4
+Sterile Pump B,Pump,165.8,2.5,75.7
+Sterile Pump C,Pump,195.2,3.1,81.2
+Sanitary HX A,Heat Exchanger,75.3,1.8,115.6
+Sanitary HX B,Heat Exchanger,68.7,1.6,112.3
+Sanitary HX C,Heat Exchanger,82.4,2.0,118.7
+Diaphragm Valve A,Valve,45.7,2.8,78.2
+Diaphragm Valve B,Valve,38.9,2.4,74.6
+Diaphragm Valve C,Valve,52.3,3.2,81.8
+Reciprocating Compressor A,Compressor,280.4,4.2,95.7
+Reciprocating Compressor B,Compressor,255.7,3.8,91.2
+Reciprocating Compressor C,Compressor,305.1,4.6,100.3
+Batch Reactor A,Reactor,55.6,1.2,135.8
+Batch Reactor B,Reactor,48.9,1.0,132.4
+Batch Reactor C,Reactor,62.1,1.4,139.2
+Membrane Filter A,Filter,28.7,0.9,58.4
+Membrane Filter B,Filter,25.2,0.8,55.7
+Membrane Filter C,Filter,32.3,1.1,61.2
+Stainless Tank A,Tank,15.8,0.5,38.7
+Stainless Tank B,Tank,18.3,0.6,41.4
+Stainless Tank C,Tank,13.5,0.4,35.8
+Extraction Column A,Distillation Column,125.4,2.5,125.7
+Extraction Column B,Distillation Column,118.9,2.2,122.3
+Extraction Column C,Distillation Column,132.1,2.8,129.1
+Inline Mixer A,Mixer,65.7,1.5,72.4
+Inline Mixer B,Mixer,58.9,1.3,69.1
+Inline Mixer C,Mixer,72.5,1.7,75.7
+Vacuum Dryer A,Dryer,85.8,1.8,98.4
+Vacuum Dryer B,Dryer,78.3,1.6,95.2
+Vacuum Dryer C,Dryer,93.2,2.0,101.8
