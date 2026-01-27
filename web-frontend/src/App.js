@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './styles/App.css';
 import DatasetList from './components/DatasetList';
 import DatasetDetail from './components/DatasetDetail';
 import CSVUpload from './components/CSVUpload';
