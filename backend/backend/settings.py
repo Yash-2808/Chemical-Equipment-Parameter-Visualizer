@@ -21,12 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-puj2863f%ibq5(z(ird)z8)h9$uths_-)%%wxjuvu4%jx66a0w'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-puj2863f%ibq5(z(ird)z8)h9$uths_-)%%wxjuvu4%jx66a0w')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True').lower() in ['true', '1', 'yes']
+DEBUG = os.getenv('DEBUG', 'False').lower() in ['true', '1', 'yes']
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1'] + os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',           # allow all Render subdomains
+] + [h for h in os.getenv('ALLOWED_HOSTS', '').split(',') if h]
 
 
 # Application definition
@@ -158,7 +162,15 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3003",
 ]
 
+# Allow any Render-hosted frontend to call the API
+CORS_ALLOW_ALL_ORIGINS = True
+
 CORS_ALLOW_CREDENTIALS = True
+
+# Required for HTTPS POST/PUT requests on Render
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.onrender.com',
+] + [o for o in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if o]
 
 # File upload settings
 MEDIA_URL = '/media/'
