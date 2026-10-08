@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: chemical-equipment-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r ../requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    startCommand: gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DJANGO_SETTINGS_MODULE
+        value: backend.settings
+      - key: ALLOWED_HOSTS
+        value: .onrender.com
